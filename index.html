@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TCX-2710 — Πώς νιώθεις στην Τρίπολη;</title>
+<meta name="description" content="Όλοι φεύγουν. Εμείς μένουμε. Μία λέξη για την Τρίπολη.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='900' fill='%232f4bff'>X</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;900&display=swap" rel="stylesheet">
+<style>
+:root{--wall:#3a3b3d;--paper:#e9e6df;--ink:#111;--spray:#f1efe9;--x:#2f4bff;--mute:#a4a39f;--bar:#0b0c0d;--hi:#ffd400;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--wall:#232426;--bar:#050505}}
+:root[data-theme="dark"]{--wall:#232426;--bar:#050505}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden}
+body{background:var(--wall);color:var(--spray);font-family:'Inter Tight',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:18px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.55;mix-blend-mode:overlay;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1.4 -.2'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+:focus-visible{outline:3px solid var(--hi);outline-offset:3px}
+.wall{position:relative;height:100vh;height:100dvh;display:flex;flex-direction:column}
+nav{position:relative;z-index:3;display:flex;justify-content:space-between;padding:16px 22px 0;font-weight:900;font-size:20px;letter-spacing:-.02em}
+nav span{font-weight:500;font-size:14px;color:var(--mute)}
+.scroller{position:relative;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+.stage{position:relative;overflow:hidden}
+.poster{position:absolute;left:50%;top:3%;width:min(80vw,600px);transform:translateX(-50%) rotate(-2.5deg);background:var(--paper);color:var(--ink);padding:30px 28px 38px;clip-path:polygon(0 3%,6% 0,15% 2%,29% 0,47% 3%,63% 0,81% 2%,100% 0,98% 22%,100% 48%,97% 71%,100% 100%,82% 97%,61% 100%,38% 97%,19% 100%,0 98%,2% 70%,0 46%,3% 24%);filter:contrast(1.08)}
+.logo{display:flex;align-items:flex-end;gap:6px;font-weight:900;font-size:clamp(88px,22vw,190px);line-height:.8;letter-spacing:-.06em}
+.logo button{all:unset;cursor:pointer;color:var(--x);display:inline-block;transform:rotate(var(--rot,0deg));transition:transform .7s cubic-bezier(.3,1.6,.5,1)}
+.logo button:focus-visible{outline:3px solid var(--x);outline-offset:6px}
+.stamp{margin:0 0 .12em auto;align-self:flex-start;font-weight:900;font-size:clamp(18px,4vw,32px);letter-spacing:.04em;border:3px solid var(--ink);padding:2px 8px;transform:rotate(6deg);line-height:1.1}
+.means{margin-top:12px;font-weight:900;font-size:clamp(15px,2.4vw,20px);letter-spacing:-.01em;text-transform:uppercase}
+.mx{all:unset;cursor:pointer;color:var(--x);font-weight:900;padding:0 3px;border-bottom:3px solid var(--x)}.mx:hover{background:var(--x);color:#fff}.mx:focus-visible{outline:3px solid var(--x);outline-offset:3px}
+.poster h1{margin-top:16px;border-top:3px solid var(--ink);padding-top:10px;font-weight:900;font-size:clamp(24px,5.4vw,46px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase}
+.poster h1 i{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.tag{position:absolute;font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:.95;white-space:nowrap;z-index:2;text-shadow:0 3px 0 #0009,0 0 14px var(--c),1px 0 1px var(--c),-1px 0 1px var(--c)}
+.tag.hide{visibility:hidden}
+.tag.go{animation:spray .9s steps(14,end) both}
+@keyframes spray{from{clip-path:inset(-20px 100% -90px -20px)}to{clip-path:inset(-20px -20px -90px -20px)}}
+.drip{position:absolute;width:4px;border-radius:0 0 4px 4px;height:0;background:var(--c)}
+.tag.go .drip{animation:drip 2.2s .8s ease-in forwards}
+@keyframes drip{to{height:var(--h)}}
+.bar{position:relative;z-index:4;background:var(--bar);border-top:3px solid var(--hi);padding:14px 22px 18px}
+form{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+label{font-weight:900;font-size:clamp(20px,3vw,30px);letter-spacing:-.03em;flex:1 1 100%}
+input{flex:1 1 220px;font:inherit;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;background:transparent;color:var(--spray);border:0;border-bottom:3px solid var(--spray);padding:10px 2px;border-radius:0}
+input::placeholder{color:var(--mute)}
+input:focus{outline:none;border-color:var(--hi)}
+.btn{font:inherit;font-weight:900;text-transform:uppercase;background:var(--x);color:#fff;border:0;padding:14px 24px;cursor:pointer}
+.btn:hover:not(:disabled){filter:brightness(1.15)}
+.btn:disabled{opacity:.5;cursor:default}
+.hint{flex:1 1 100%;font-size:14px;color:var(--mute);min-height:1.3em}
+@media(max-width:600px){.poster{padding:20px 18px 26px}.logo{font-size:26vw}.stamp{font-size:4.6vw;border-width:2px;padding:1px 5px}.poster h1{font-size:6.2vw;margin-top:10px}}
+@media(prefers-reduced-motion:reduce){.tag.go{animation:none}.tag.go .drip{animation:none;height:var(--h)}.logo button{transition:none}}
+</style>
+</head>
+<body>
+<div class="wall">
+<nav><span style="color:var(--spray);font-weight:900;font-size:20px">TCX-2710</span><span>Τρίπολη · Αρκαδία</span></nav>
+<div class="scroller" id="scroller"><div class="stage" id="stage">
+  <div class="poster" id="poster">
+    <div class="logo"><span>TC</span><button id="x" aria-label="Το X σημαίνει ό,τι νιώθει η πόλη. Πάτα για να δεις μια λέξη από τον τοίχο.">X</button><span class="stamp">2710</span></div>
+    <p class="means" aria-live="polite">Tripoli City <button class="mx" id="x2" aria-label="Πάτα το X για να αλλάξει το συναίσθημα">X</button> = <span id="emo">ό,τι νιώθεις</span></p>
+    <h1>Όλοι φεύγουν.<br><i>Εμείς μένουμε.</i></h1>
+  </div>
+</div></div>
+<div class="bar">
+  <form id="f">
+    <label for="t">Πώς νιώθεις στην Τρίπολη;</label>
+    <input id="t" maxlength="18" placeholder="Μία λέξη" autocomplete="off" aria-label="Μία λέξη">
+    <button class="btn" id="go" type="submit">Ψέκασε</button>
+    <span class="hint" id="hint" aria-live="polite"></span>
+  </form>
+</div>
+</div>
+<script>
+window.addEventListener('error',e=>{const h=document.getElementById('hint');if(h)h.textContent='Σφάλμα: '+e.message});
+/* ===== ΡΥΘΜΙΣΕΙΣ ===== */
+const SUPABASE_URL = '';        // αργότερα: https://xxxx.supabase.co
+const SUPABASE_ANON_KEY = '';   // αργότερα: το anon/public key
+/* ====================== */
+const live=!!(SUPABASE_URL&&SUPABASE_ANON_KEY);
+const HD={apikey:SUPABASE_ANON_KEY,Authorization:'Bearer '+SUPABASE_ANON_KEY,'Content-Type':'application/json'};
+const scroller=document.getElementById('scroller'),stage=document.getElementById('stage'),poster=document.getElementById('poster'),f=document.getElementById('f'),t=document.getElementById('t'),go=document.getElementById('go'),hint=document.getElementById('hint'),xb=document.getElementById('x'),emo=document.getElementById('emo'),x2=document.getElementById('x2');
+const COLORS=['#ff3b2f','#ffd400','#ff7a00','#5b7bff','#2fe0a5'];
+const say=m=>hint.textContent=m;
+const seen=new Set(),words=[];let rot=0;
+const EMO=['ΧΑΡΑ','ΜΟΝΑΞΙΑ','ΑΠΟΡΙΑ','ΕΛΠΙΔΑ','ΝΟΣΤΑΛΓΙΑ','ΘΥΜΟΣ','ΓΑΛΗΝΗ','ΑΓΧΟΣ','ΠΕΡΙΕΡΓΕΙΑ','ΑΓΑΠΗ','ΠΛΗΞΗ','ΥΠΟΜΟΝΗ','ΠΕΡΗΦΑΝΕΙΑ','ΑΔΡΑΝΕΙΑ','ΟΜΟΡΦΙΑ','ΑΝΑΚΟΥΦΙΣΗ','ΔΙΑΘΕΣΗ'];
+let last='';
+function spin(w){rot+=90;xb.style.setProperty('--rot',rot+'deg');if(w){last=w.toLocaleUpperCase('el');emo.textContent=last}}
+function cycle(){
+  const pool=EMO.concat(words.map(w=>w.word.toLocaleUpperCase('el'))).filter(w=>w!==last);
+  const w=pool[Math.floor(Math.random()*pool.length)];spin(w);
+}
+xb.addEventListener('click',cycle);x2.addEventListener('click',cycle);
+function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const rel=(r,s)=>({l:r.left-s.left,t:r.top-s.top,r:r.right-s.left,b:r.bottom-s.top});
+const hit=(a,b,p)=>a.l<b.r+p&&a.r>b.l-p&&a.t<b.b+p&&a.b>b.t-p;
+function seedOf(id){let n=0;for(const ch of String(id))n=(n*31+ch.charCodeAt(0))>>>0;return n||1}
+function fit(){stage.style.minHeight=scroller.clientHeight+'px'}
+addEventListener('resize',fit);fit();
+function place(w,animate){
+  if(seen.has(w.id))return;seen.add(w.id);words.push(w);
+  const el=document.createElement('div');el.className='tag';el.textContent=w.word.toLocaleUpperCase('el');
+  const c=COLORS[seedOf(w.id)%COLORS.length];el.style.setProperty('--c',c);el.style.color=c;
+  const R=rng(seedOf(w.id)+words.length*7919);
+  for(let i=0;i<3;i++){const d=document.createElement('span');d.className='drip';d.style.top='92%';d.style.left=(10+R()*80)+'%';d.style.setProperty('--h',(14+R()*40)+'px');d.style.animationDelay=(.8+i*.35)+'s';el.appendChild(d)}
+  const W=stage.clientWidth,Hh=stage.clientHeight;
+  const k=Math.min(1,W/700+.45);
+  el.style.fontSize=((16+R()*22)*k)+'px';
+  el.style.transform='rotate('+(R()*30-15)+'deg)';
+  stage.appendChild(el);
+  const sr=stage.getBoundingClientRect(),P=rel(poster.getBoundingClientRect(),sr);
+  let ok=false,fs=parseFloat(el.style.fontSize);
+  for(let round=0;round<4&&!ok;round++){
+    el.style.fontSize=fs+'px';
+    for(let n=0;n<120&&!ok;n++){
+      const x=R()*Math.max(1,W-el.offsetWidth),y=R()*Math.max(1,Hh-el.offsetHeight-30);
+      el.style.left=x+'px';el.style.top=y+'px';
+      const bx=rel(el.getBoundingClientRect(),sr);
+      if(!hit(bx,P,12))ok=true;
+    }
+    fs*=.8;
+  }
+  if(!ok){el.style.left='4px';el.style.top=Math.max(0,Hh-el.offsetHeight-40)+'px'}
+  el.style.left=(parseFloat(el.style.left)/W*100)+'%';el.style.top=(parseFloat(el.style.top)/Hh*100)+'%';
+  if(animate){requestAnimationFrame(()=>el.classList.add('go'));spin(w.word)}else el.classList.add('go');
+}
+/* ---- αποθήκευση ---- */
+const KEY='tcx2710_words';
+const localLoad=()=>{try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}};
+const localSave=a=>{try{localStorage.setItem(KEY,JSON.stringify(a.slice(-2000)))}catch(e){}};
+async function load(first){
+  if(!live){if(first)localLoad().forEach(w=>place(w,false));return}
+  try{const r=await fetch(SUPABASE_URL+'/rest/v1/words?select=id,word&order=id.desc&limit=500',{headers:HD});
+    if(!r.ok)throw 0;(await r.json()).reverse().forEach(w=>place(w,!first))}
+  catch(e){say('Δεν φορτώνει ο τοίχος. Δοκίμασε ξανά σε λίγο.')}
+}
+f.addEventListener('submit',async e=>{
+  e.preventDefault();const v=t.value.trim();
+  if(!v){t.focus();return}
+  if(/\s/.test(v)){say('Μία λέξη μόνο.');return}
+  if(live&&Date.now()-(+localStorage.getItem('tcx_last')||0)<20000){say('Μία λέξη κάθε 20 δευτερόλεπτα.');return}
+  go.disabled=true;
+  try{
+    if(live){const r=await fetch(SUPABASE_URL+'/rest/v1/words',{method:'POST',headers:{...HD,Prefer:'return=representation'},body:JSON.stringify({word:v})});
+      if(!r.ok)throw 0;const[row]=await r.json();place(row,true);try{localStorage.setItem('tcx_last',Date.now())}catch(_){}}
+    else{const a=localLoad();const w={id:'l'+Date.now(),word:v};a.push(w);localSave(a);place(w,true)}
+    t.value='';say('Μπήκε στον τοίχο.');
+  }catch(err){say('Δεν πέρασε. Δοκίμασε ξανά.')}
+  go.disabled=false;t.focus();
+});
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>{load(true);if(live)setInterval(()=>load(false),10000)});
+</script>
+</body>
+</html>
